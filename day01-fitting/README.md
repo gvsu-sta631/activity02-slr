@@ -194,7 +194,7 @@ displays the linear model’s y-intercept and the coefficient of
 squares regression line for the linear model:
 
 $$
-  \hat{y} = 4.28 + 0.542 \times pf\_expression\_control
+\hat{y} = 4.28 + 0.542 \times pf\_expression\_control
 $$
 
 Using this equation…
