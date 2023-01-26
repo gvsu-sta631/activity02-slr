@@ -147,13 +147,13 @@ vs. fitted (predicted) values.
     ylab("Residuals")
   ```
 
-  Notice here that `m1_aug` can also serve as a data set because stored
-  within it are the fitted values ($\hat{y}$) and the residuals. Also
-  note that we are getting fancy with the code here. After creating the
-  scatterplot on the first layer (first line of code), we overlay a red
-  horizontal dashed line at $y = 0$ (to help us check whether the
-  residuals are distributed around 0), and we also rename the axis
-  labels to be more informative.
+Notice here that `m1_aug` can also serve as a data set because stored
+within it are the fitted values ($\hat{y}$) and the residuals. Also note
+that we are getting fancy with the code here. After creating the
+scatterplot on the first layer (first line of code), we overlay a red
+horizontal dashed line at $y = 0$ (to help us check whether the
+residuals are distributed around 0), and we also rename the axis labels
+to be more informative.
 
 Answer the following question:
 
