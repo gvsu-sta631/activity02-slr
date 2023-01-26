@@ -22,7 +22,8 @@ In this repository/directory, you should see five items:
 - `README.md` - the document you are currently reading.
 - `day01-fitting` - a folder that contains items for you to complete
   during the first 75-minute class meeting.
-  <!-- - `day02-assessing` - a folder that contains items for you to complete during the second 75-minute class meeting. -->
+- `day02-assessing` - a folder that contains items for you to complete
+  during the second 75-minute class meeting.
 
 We will explore most of these items over this week. Before doing that,
 you will first make your own copy of this repository.
@@ -141,6 +142,9 @@ you will see the following message:
 You will complete the rest of this activity in **your** forked copy of
 the `activity02-slr` repo.
 
+**Note for Bradford, you need to add the clone to RStudio information
+here!**
+
 ![check-in](README-img/noun-magnifying-glass.png) **Check in**
 
 Take a moment to reflect on what is possibly your second time doing this
@@ -178,11 +182,63 @@ Read these directions first, then work through them.
 The rest of this `README` document contains tasks/directions for the
 second class meeting of this week.
 
-## Task 3: Still in progress
+## Task 3: Updating your forked GitHub repo
 
-I will have the rest of this activity completed by our next class
-session. I will also show you how to update your forked repos from my
-original repo 🎆
+You will need to start reading these directions back at my
+`gvsu-sta631/activity02-slr` GitHub repo **and** have your forked
+`username/activity02-slr` GitHub repo handy. I recommend that you have
+my repo opened on one half of your screen and your repo opened on the
+other half. Read these directions first, then work through them.
+
+1.  At the top of your `username/activity02-slr` repo (above the repo
+    contents section), verify that you see a message that looks
+    something like:
+
+> This branch is X commits behind gvsu-sta631:main.
+
+2.  Click on the hyperlinked “X commits behind” portion of that message
+    to be taken to a **Comparing changes** page.
+3.  Verify that your drop-down menu options specify:
+
+- base repository: username/activity02-slr
+- base: main
+- head repository: gvsu-sta631/activity02-slr
+- compare: main
+
+4.  Also verify that you have a message directly below this that says:
+
+> ✓ Able to merge. These branches can be automatically merged.
+
+Flag me if you see something different. 5. Click on the green **Create
+pull request** button under this previous message. Note you can look at
+the changes that I made, if you so desire, by scrolling down. However,
+this is not necessary. 6. On the next page, provide a short descriptive
+message in the “Title” box (e.g., “Adding Day 2 materials”). You can
+also provide a more detailed message in the “Leave a comment” box if you
+choose. 7. Click on the green **Create pull request** button. 8. On the
+next screen which is titled the same thing as what you provided in the
+“Title” box on the previous screen, you will be presented with a bunch
+of information. If you scroll down a little, you should see a green
+check mark with a message that specifies:
+
+> This branch has no conflicts with the base branch
+
+And you can click on the green **Merge pull request**. 9. You will be
+provided with with an opportunity to provide another meaningful message
+(or accept the default message). Finally, click on the green **Confirm
+merge** button. You can now work directly from your
+`username/activity02-slr` repo.
+
+In summary, what you just did is pulled my changes into your repository.
+Git and GitHub refer to this as a “pull request” because you are asking
+to pull items into your repo.
+
+## Task 4: Updating your forked GitHub repo
+
+In your `username/activity02-slr` repo, go into the `day02-assessing`
+subfolder and follow the tasks listed in the `README`. You will continue
+to work in your `activity02-day01.Rmd` file that you started during Day
+1 of this activity.
 
 ## Attribution
 

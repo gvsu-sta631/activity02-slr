@@ -10,7 +10,7 @@ In this repository/directory you should see two items:
 
 Read these directions first, then work through them.
 
-- In the **Files** pane of RStudio, locate and click one the
+- In the **Files** pane of RStudio, locate and click on the
   `activity02-day01.Rmd` file to open it.
 - This file is essentially a blank document with only a `title` and
   `output` option (to produce a GitHub friendly Markdown file). You will
@@ -113,8 +113,8 @@ larger).
   after each line.
 
   ``` r
-  install.packages('openintro')
-  openintro::plot_ss(x = pf_expression_control, y = pf_score, data = hfi_2016)
+  install.packages('statsr')
+  statsr::plot_ss(x = pf_expression_control, y = pf_score, data = hfi_2016)
   ```
 
 - After running this command, you’ll be prompted to click two points on
@@ -142,12 +142,12 @@ minimizes the sum of squared residuals. To visualize the squared
 residuals, you can rerun the plot command and add the argument
 `showSquares = TRUE`.
 
-Note that the output from `openintro::plot_ss` provides you with the
-slope and intercept of your line as well as the sum of squares.
+Note that the output from `statsr::plot_ss` provides you with the slope
+and intercept of your line as well as the sum of squares.
 
 Answer the following question:
 
-4.  Using `openintro::plot_ss`, choose a line that does a good job of
+4.  Using `statsr::plot_ss`, choose a line that does a good job of
     minimizing the sum of squares. Run the function several times. What
     was the smallest sum of squares that you got? How does it compare to
     your neighbour’s?
