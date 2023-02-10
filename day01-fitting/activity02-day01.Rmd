@@ -3,6 +3,177 @@ title: "Activity 2 - Day 1"
 output: github_document
 ---
 
-```{setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE)
 ```
+
+## Load the necessary packages
+
+Let's load necessary packages for this activity. 
+
+```{r}
+library(tidyverse)
+library(tidymodels)
+```
+
+## Load the data 
+
+Let's load the data.
+
+```{r}
+hfi <- data.frame(readr::read_csv("https://www.openintro.org/data/csv/hfi.csv"))
+```
+
+This data set contains 1458 rows and 123 columns. Each row of the data set represents year. 
+
+```{r}
+hfi_2016 <- hfi %>% filter(year == "2016") 
+```
+
+To display the relationship between the pf_score and pf_expression_control, I would use scatter plot because both variables are quantitative variables.
+
+```{r}
+# pf_score vs pf_expression_control
+hfi_2016 %>% ggplot(aes(x = pf_score,
+                        y = pf_expression_control)) + 
+  geom_point(alpha=0.20)+
+  labs(title = "Relationship between the pf score and pf expression control",
+       x = "Personal Freedom Score",
+       y = "Personal Freedom Expression Control",
+       caption = "Data source: The OpenIntro site") + 
+  geom_smooth(se = FALSE, method = "lm", size = 1) +
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  theme(text = element_text(face = "bold"))
+```
+
+From the above plot, the relationship looks linear. I think I would be comfortable using a linear model to predict the personal freedom score If I know a country’s pf_expression_control.
+
+## Task 2: Overall model fit
+
+### Sum of squared residuals
+102.947 was the smallest sum of squares that I got with intercept of 4.1425 and x equals to 0.5709.
+
+
+```{r}
+m1 <- lm(pf_score ~ pf_expression_control, data = hfi_2016)
+
+broom::tidy
+tidy(m1)
+```
+
+
+### Interpretation: 
+
+Interpret the intercept:
+
+Intercept: For countries with a pf_expression_control of 0 (those with the largest amount of political pressure on media content), we expect their mean personal freedom score to be 4.28
+
+Interpret the slope:
+
+Slope: For every 1 unit increase in pf_expression_control, we expect a country's mean personal freedom score to increase 0.542 units.
+
+
+```{r}
+# Obtaining the correlation coefficient
+cor(hfi_2016$pf_expression_control, hfi_2016$pf_score)
+```
+
+Since, the correlation coefficient is 0.85 we can say that there is a positive linear trend associated between pf_expression_control and personal freedom score. An increase in the value of one variable is associated with an increase in the other variable.
+
+```{r}
+# Assessing our model fit using R^2
+broom::glance
+glance(m1)
+```
+
+The value of R^2 for this model is 0.7141. This means 71.41% of the variability in the country’s personal freedom score is explained by their personal freedom expression control.
+
+```{r}
+# Fitting a new model that uses pf_expression_control to predict hf_score
+m2 <- lm(hf_score ~ pf_expression_control, data = hfi_2016)
+
+broom::tidy
+tidy(m2)
+```
+
+From the above output, the equation of the regression line is:
+
+yBar = 5.053396 + 0.368432*x
+
+Where yBar = estimated hf_score and x = pf_expression_control
+
+From the slope, it says that every 1 unit increase in pf_expression_control, we expect a country’s mean human freedom score to increase 0.37 units.
+
+## Task 3: Prediction and prediction errors
+
+```{r}
+# pf_expression_control vs pf score
+hfi_2016 %>% ggplot(aes(x = pf_expression_control,
+                        y = pf_score)) + 
+  geom_smooth(alpha=0.20) +
+  labs(title = "Relationship between the  pf expression control and hf score",
+       x = "Personal Freedom Expression Control",
+       y = "Personal Freedom Score",
+       caption = "Data source: The OpenIntro site") + 
+  geom_smooth(se = FALSE, method = "lm", size = 1) +
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  theme(text = element_text(face = "bold"))
+```
+
+yBar = 4.2838153 + 0.5418452*3 = 5.909351
+
+```{r}
+# Check oberved values of pf_score with 6.7 rating for `pf_expression_control`
+
+hfi_2016 %>%
+  group_by(pf_score) %>%
+  filter(pf_expression_control == 3)
+```
+
+residual = observed value - predicted value
+observed value = I would consider the closest one with observed pf_score of less value for 3 rating for pf_expression_score.(Which we need to find from augment residual error)
+predicted value = yBar = 5.909351
+If the residual value is in negative then it is overestimated by that value.
+
+## Task 4: Model diagnostics
+
+```{r}
+broom::augment
+
+m1_aug <- augment(m1)
+m1_aug
+```
+
+# Linearity:
+
+```{r}
+# Residuals vs. fitted (predicted) values
+ggplot(data = m1_aug, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
+  xlab("Fitted values") +
+  ylab("Residuals")
+```
+
+Linearity: From the above Residual by predicted value plot, there is no apparent pattern in the residuals plot. So it indicates there is a linear relationship between the two variables. Thus, the linearity assumption is met here.
+
+# Nearly normal residuals: 
+
+```{r}
+# Histogram of the residuals.
+ggplot(data = m1_aug, aes(x = .resid)) +
+  geom_histogram(binwidth = 0.25) +
+  xlab("Residuals")
+```
+
+```{r}
+# QQ plot (Optional)
+ggplot(data = m1_aug, aes(sample = .resid)) +
+  stat_qq()
+```
+
+Nearly normal residuals: Based on the histogram, the residuals are nearly normal. Although slightly skewed to the left, there is only one real peak (uni-modal) on the bell curve in the residual histogram, so the nearly normal condition is met.
+
+Constant variability: The points residuals vs. fitted plot show that points are scattered around 0, there is a constant variability.Thus, the constant variability condition appear to be met.
