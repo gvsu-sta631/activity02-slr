@@ -4,74 +4,122 @@ Day 1 - Fitting an SLR Model
 In this repository/directory you should see two items:
 
 - `README.md` - this document.
-- `activity02-day01.Rmd` - the file you will complete in RStudio.
+- `activity02.Rmd` - the file you will complete in RStudio.
+
+For today’s portion, we are going to focus on descriptive analyses of
+your data: visualizations, numerical summaries, and describing model
+parameter estimates. We also dig into the concept of *sum of squared
+residuals*. Day 2 will further our assessment of SLR models and
+introduce creating training and testing subsets.
 
 ## Task 1: Open the RMarkdown document
 
 Read these directions first, then work through them.
 
 - In the **Files** pane of RStudio, locate and click on the
-  `activity02-day01.Rmd` file to open it.
+  `activity02.Rmd` file to open it.
 - This file is essentially a blank document with only a `title` and
   `output` option (to produce a GitHub friendly Markdown file). You will
   follow the tasks in this `README` file and do the work (coding,
-  responding, etc.) in RStudio.
+  writing, etc.) in RStudio.
 
 ![check-in](../README-img/noun-magnifying-glass.png) **Check in**
 
 Think of how you can use your Markdown skills from last week to help
-keep your RMarkdown file neatly organized. Also, be as descriptive in
-your response to questions and even leave comments in your code to help
-you understand what you are doing.
+keep your RMarkdown file neatly organized. I encourage you to treat the
+`activity02.Rmd` file as a way to document you work. That is,
+
+- Leave future you quality comments in your code,
+- Provide a summary AND interpretation of your output,
+- Practice telling your data’s story. Avoid summarizing what you did
+  (your code does that). Instead, think about what your results mean in
+  your data’s context.
+
+Before we get too far, underneath the R Code Chunk titled
+`global-options` (essentially the only thing in this document), provide
+a description of your data:
+
+1.  Explain why you chose that - why is it interesting to you?
+2.  Explain where you obtained your data from.
+3.  Who created this dataset?
+
+I will invite you to update this section on the second day of this
+activity.
 
 ## Task 2: Load the necessary packages
 
-We will be using two packages from Posit (formerly
+I provided you with examples of how to fit a simple linear regression
+model using two packages from Posit (formerly
 [RStudio](https://posit.co/)): `{tidyverse}` and `{tidymodels}`. If you
-would like to try the *ISLR* labs using these two packages instead of
-base R, [Emil Hvitfeldt](https://www.emilhvitfeldt.com/) (of Posit) has
-put together a [complementary online
-text](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html).
+would like to develop your skills with these packages, I strongly
+recommend [Emil Hvitfeldt](https://www.emilhvitfeldt.com/)’s (of Posit)
+[complementary online text of *ISL*s lab
+sections](https://emilhvitfeldt.github.io/ISLR-tidymodels-labs/index.html).
 
-- In the **Packages** pane of RStudio, check if `{tidyverse}` and
-  `{tidymodels}` are installed. Be sure to check both your **User
-  Library** and **System Library**.
+When loading any packages, be sure to:
 
-- If either of these are not currently listed, type the following in
-  your **Console** pane, replacing `package_name` with the appropriate
-  name, and press Enter/Return afterwards.
+- In the **Packages** pane of RStudio, check if they are already
+  installed. Be sure to check both your **User Library** and the
+  **System Library**.
+
+- If they are not listed, install them in your **Console** pane, by
+  typing the following - replacing `package_name` with the appropriate
+  name - and press Enter/Return afterwards.
 
   ``` r
   install.packages("package_name")
   ```
 
-- Once you have verified that both `{tidyverse}` and `{tidymodels}` are
-  installed, load these packages in the R chunk titled `setup`. Press
-  Enter/Return after line 7 to add more code lines, then type the
-  following:
+- Once you have verified that the packages are installed, load them
+  packages in an R chunk. Be sure that you provide a descriptive code
+  chunk title. Then type the following for as many packages as you are
+  loading (one `library` per `{package}`):
 
   ``` r
-  library(tidyverse)
-  library(tidymodels)
+  library(package_name)
   ```
 
-- Run the `setup` code chunk or **knit**
-  <img src="../README-img/knit-icon.png" alt="knit" width = "20"/> icon
-  your Rmd document to verify that no errors occur.
+Some helpful notes:
 
-Remember to organize your RMarkdown document using your Markdown skills.
+- You might need to load more packages as you work. Add those to this
+  same place. If you end up not using a package, comment it out and
+  explain why you didn’t need it or end up using it.
 
-## Task 3: Load the data and
+- To create R code chunks:
 
-The data we’re working with is from the OpenIntro site:
-`https://www.openintro.org/data/csv/hfi.csv`
+  - My favorite method is to use keyboard shortcuts: Ctrl + Alt + I (mac
+    users: Cmd + Option + I).
+  - You could also click on the Insert Code Chunk
+    <img src="../README-img/code-chunk-icon.png" alt="code chunk" width = "20"/>
+    icon near the upper right-hand corner of your `.Rmd` file.
 
-- Create a new R code chunk to read in the linked CSV file.
-- Rather than downloading this file, uploading to RStudio, then reading
-  it in, explore how to load this file directly from the provided URL
-  with `readr::read_csv` (`{readr}` is part of `{tidyverse}`).
-- Assign this data set into a data frame named `hfi` (short for “Human
-  Freedom Index”).
+- Knit your document frequently. First, this saves your work
+  automatically. Second, this runs your code from a “vanilla” R session
+  so it will let you know of any errors/warnings.
+
+- Remember to organize your RMarkdown document using your Markdown
+  skills. Use section headers, subsection headers, text formats (bold
+  and italics), lists, etc.
+
+## Task 3: Load your data
+
+In Activity 1, you read data from a website. Your data might not be
+accessible like data from *OpenIntro*.
+
+Explore different ways to load in your data. For example, what do you
+need to upload your data into your cloned (local version) RStudio
+repository? Note that this might be difficult if you have a very large
+dataset. One of my favorite methods for reading in large data that I
+don’t want to also push to GitHub is to load it to my Google Drive, then
+access it using
+[`{googlesheets4}`](https://googlesheets4.tidyverse.org/) from the
+brilliant Dr. Jenny Bryan.
+
+- Create a new R code chunk to read in your data and provide a
+  descriptive title.
+- Access your data and assign it (i.e., `<-`) to an R data frame (we
+  used `readr::read_csv` in Activity 1 for a CSV file) with a
+  descriptive name.
 
 After doing this and viewing the loaded data, answer the following
 questions:
@@ -79,25 +127,22 @@ questions:
 1.  What are the dimensions of the dataset? What does each row
     represent?
 
-- The dataset spans a lot of years. We are only interested in data from
-  year 2016.
-  - Create a new R code chunk,
-  - Filter the data `hfi` data frame for year 2016, and
-  - Assign the result to a data frame named `hfi_2016`.
+2.  Do you have multiple measurements over time? Across different
+    locations? Do you plan on focusing on all of these values? Do you
+    need to subset your dataset to be more focused? For example, we
+    focused on data from the year 2016 in Activity 1.
 
-2.  What type of plot would you use to display the relationship between
-    the personal freedom score, `pf_score`, and `pf_expression_control`?
+3.  What two variables are you focusing on? That is, what is your
+    research question and what information do you have to explore this
+    question? Keep in mind that for this activity we are focusing on SLR
 
-- Create a new R code chunk and plot this relationship using the
-  variable `pf_expression_control` as the predictor.
+## Task 4: Explore your data
 
-3.  Does the relationship look linear? If you knew a country’s
-    `pf_expression_control`, or its score out of 10, with 0 being the
-    most, of political pressures and controls on media content, would
-    you be comfortable using a linear model to predict the personal
-    freedom score?
+4.  Create a new R code chunk (or multiple R code chunks) and plot each
+    of your variables - separately and together. Be sure to describe
+    what you notice/wonder. Does the relationship look linear?
 
-## Task 4: Sum of squared residuals
+## Task 5: Sum of squared residuals
 
 In this section, you will use an interactive function provided by the
 OpenIntro team to investigate what is meant by “sum of squared
@@ -109,12 +154,14 @@ tab in the lower right-hand corner has enough space to make a plot (you
 can use your mouse to make this area horizontally and vertically
 larger).
 
-- In your **Console**, type the following. Be sure to press Enter/Return
+- In your **Console** (**NOT** in your `.Rmd` file), type the
+  following - replace `x_variable`, `y_variable`, and `data_name` with
+  the appropriate details from your data. Be sure to press Enter/Return
   after each line.
 
   ``` r
   install.packages('statsr')
-  statsr::plot_ss(x = pf_expression_control, y = pf_score, data = hfi_2016)
+  statsr::plot_ss(x = x_variable, y = y_variable, data = data_name)
   ```
 
 - After running this command, you’ll be prompted to click two points on
@@ -143,61 +190,53 @@ residuals, you can rerun the plot command and add the argument
 `showSquares = TRUE`.
 
 Note that the output from `statsr::plot_ss` provides you with the slope
-and intercept of your line as well as the sum of squares.
+and intercept of your line as well as the sum of squared residuals.
 
 Answer the following question:
 
-4.  Using `statsr::plot_ss`, choose a line that does a good job of
-    minimizing the sum of squares. Run the function several times. What
-    was the smallest sum of squares that you got? How does it compare to
-    your neighbour’s?
+Use `statsr::plot_ss` to choose a line that does a good job of
+minimizing the sum of squares. Run the function several times.
+
+Answer the following questions:
+
+5.  What was the smallest sum of squares that you got? What was the
+    relationship between your line and the data points?
+6.  What was the largest sum of squares you got? What was the
+    relationship between your line and the data points?
 
 ## Task 5: The linear model
 
-It is rather cumbersome to try to get the correct least squares line,
-i.e. the line that minimizes the sum of squared residuals, through trial
-and error. Instead, you can use the `lm` function from base R to fit the
-linear model (i.e., the regression line).
+It is rather cumbersome to try to get the correct least squares line -
+i.e., the line that minimizes the sum of squared residuals - through
+trial and error. Instead, you can use R to fit the linear model (i.e.,
+the regression line).
 
-- Create a new R code chunk and type the following, then run your code
-  chunk or knit your document.
+Recall that in Activity 1 we did the following:
 
-  ``` r
-  m1 <- lm(pf_score ~ pf_expression_control, data = hfi_2016)
-  ```
+``` r
+# Created a parsnip specification for a linear model
 
-The first argument in the function `lm()` is a formula that takes the
-form `y ~ x`. Here it can be read that we want to make a linear model of
-`pf_score` as a function of `pf_expression_control`. The second argument
-specifies that R should look in the `hfi` data frame to find the two
-variables.
+lm_spec <- linear_reg() %>%
+  set_mode("regression") %>%
+  set_engine("lm")
 
-**Note:** Piping (`%>%`) **will not** work here, as the data frame is
-not the first argument!
+# Fit our specification to our data
 
-The output of `lm` is an object that contains all of the information we
-need about the linear model that was just fit. We can access this
-information using `broom::tidy` (`{broom}` is part of `{tidymodels}`).
+slr_mod <- lm_spec %>% 
+fit(y_variable ~ x_variable, data = data_name)
 
-- In the previous R code chunk add the following line.
+# View our model output
+tidy(slr_mod)
+```
 
-  ``` r
-  tidy(m1)
-  ```
-
-Let’s consider this output piece-by-piece. First, the formula used to
-describe the model is shown at the top, in what’s displayed as the
-“Call”. After the formula you find the five-number summary of the
-residuals. The “Coefficients” table shown next is key; its first column
-displays the linear model’s y-intercept and the coefficient of
-`pf_expression_control`. With this table, we can write down the least
-squares regression line for the linear model:
+With your *tidy* output, write down the least squares regression line
+for the linear model. Hint fill in the appropriate information:
 
 $$
-\hat{y} = 4.28 + 0.542 \times pf\_expression\_control
+\hat{y} = b_0 + b_1 \times x
 $$
 
-Using this equation…
+Using your equation…
 
 5.  Interpret the *y*-intercept.
 
@@ -206,4 +245,5 @@ Using this equation…
 ## What is next?
 
 We will continue exploring how to fit SLR models and assess their fit
-using `{tidymodels}`.
+using `{tidymodels}` and introduce creating training and testing
+subsets.

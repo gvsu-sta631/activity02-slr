@@ -2,15 +2,14 @@ Activity 02 - Simple Linear Regression (SLR)
 ================
 
 This activity is intended to be completed in one week - outside of class
-preparation work and two 75-minute class meetings. On our Blackboard
-course site you were provided with items to read, watch, and do prior to
-attempting this activity. Do not proceed in this activity until you have
-minimally:
+preparation work and class meetings. On our Blackboard course site you
+were provided with items to read, watch, and do prior to attempting this
+activity. Do not proceed in this activity until you have minimally:
 
 1.  (Day 1 portion) Read ISL [Sections 3.0 (the chapter introduction) &
-    3.1.1](https://rdcu.be/c3STG).
+    3.1.1](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf).
 2.  (Day 2 portion) Read ISL [Sections 3.1.2 &
-    3.1.3](https://rdcu.be/c3STG).
+    3.1.3](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf).
 
 In this repository/directory, you should see five items:
 
@@ -21,9 +20,9 @@ In this repository/directory, you should see five items:
   pushing to GitHub. You do not need to do anything with this.
 - `README.md` - the document you are currently reading.
 - `day01-fitting` - a folder that contains items for you to complete
-  during the first 75-minute class meeting.
+  during the first class meeting.
 - `day02-assessing` - a folder that contains items for you to complete
-  during the second 75-minute class meeting.
+  during the second class meeting.
 
 We will explore most of these items over this week. Before doing that,
 you will first make your own copy of this repository.
@@ -58,60 +57,16 @@ Day 2:
 - 3.2 - [Correlation](https://openintro.shinyapps.io/ims-03-model-02/)
 - 3.5 - [Model fit](https://openintro.shinyapps.io/ims-03-model-05/)
 
-## STA 631 Topics Overview
+## Day 1
 
-Before we get into the work of this activity, I thought it would be
-beneficial to align the textbook topics with our course schedule along
-with provide some ideas for extending your learning. We will also use
-this time to brainstorm tasks for this semester: assignments, projects,
-etc. Essentially, ways to demonstrate and reflect on your learning of
-the STA 631 [course
-objectives](https://dykesb.netlify.app/courses/sta631/#course-objectives).
+**Do not proceed in this document until you have minimally:**
 
-| Week | ISLR                               |
-|------|------------------------------------|
-| 2    | Ch 1 & 2                           |
-| 3    | Sec 3.0 & 3.1                      |
-| 4    | Sec 3.2                            |
-| 5    | Sec 3.3 (opt 3.4 - 3.6)            |
-| 6    | Sec 4.0 - 4.2                      |
-| 7    | Sec 4.3                            |
-| 8    | Sec 4.4 (opt 4.5)                  |
-| 9    | Spring Break                       |
-| 10   | Sec 4.6 (opt 4.7)                  |
-| 11   | Ch 5 (opt 5.4)                     |
-| 12   | Sec 6.0 - 6.2, 6.4 (opt 6.3 & 6.5) |
-| 13   | Ch 13 (opt 13.6)                   |
+1.  (Week 2 Tasks, third “Do” bullet item) Created an outline of your
+    current understanding of how to approach an SLR analysis.
+2.  (Week 3 Tasks, second “Do” bullet item) Found a dataset that is of a
+    topic you find interesting and have access to.
 
-Looking at the remaining chapters, this is my understanding of how they
-fit into GVSU’s DSA program.
-
-- Ch 7: Are Ch 1 – 3 mostly review? Consider exploring this as a project
-  idea.
-- Ch 8: CIS 635 & 678
-- Ch 9: Do you want to extend Sec 4.2? Consider exploring this as a
-  project idea.
-- Ch 10: CIS 678 & maybe 677
-- Ch 11: STA 628 (elective)
-- Ch 12: STA 526 & CIS 678, maybe 635
-
-![check-in](README-img/noun-magnifying-glass.png) **Check in**
-
-- How do we want to demonstrate your learning? Some of my ideas are:
-  - Who are you? (You did this with your Positionality Statement)
-  - What do you currently know? (This will be assigned end of this week
-    or beginning of next.)
-  - Where are you going and how will you know when you get there? (This
-    will be assigned around the middle of the semester.)
-
-Notice that these are more focused on you and your growth. This is
-important to me and I hope you will see how this is important to future
-you. However, I also want to provide you with opportunities to
-demonstrate what you have learned. What do you want this to look like?
-How will we share this with me and your peers in STA 631? Do we want to
-share it with others (faculty, potential employers, etc.)?
-
-## Task 1: Forking the Repository
+### Task 1: Forking the Repository
 
 Read these directions first, then work through them. In this GitHub repo
 (i.e., my repo):
@@ -182,71 +137,53 @@ Read these directions first, then work through them.
 The rest of this `README` document contains tasks/directions for the
 second class meeting of this week.
 
+## Day 2
+
+This section will be updated by our next class session.
+
+<!--
 ## Task 3: Updating your forked GitHub repo
 
-You will need to start reading these directions back at my
-`gvsu-sta631/activity02-slr` GitHub repo **and** have your forked
-`username/activity02-slr` GitHub repo handy. I recommend that you have
-my repo opened on one half of your screen and your repo opened on the
-other half. Read these directions first, then work through them.
+You will need to start reading these directions back at my `gvsu-sta631/activity02-slr` GitHub repo **and** have your forked `username/activity02-slr` GitHub repo handy.
+I recommend that you have my repo opened on one half of your screen and your repo opened on the other half.
+Read these directions first, then work through them.
 
-1.  At the top of your `username/activity02-slr` repo (above the repo
-    contents section), verify that you see a message that looks
-    something like:
+1. At the top of your `username/activity02-slr` repo (above the repo contents section), verify that you see a message that looks something like:
+  
+  > This branch is X commits behind gvsu-sta631:main.
+  
+2. Click on the hyperlinked "X commits behind" portion of that message to be taken to a **Comparing changes** page.
+3. Verify that your drop-down menu options specify:
+  - base repository: username/activity02-slr
+  - base: main
+  - head repository: gvsu-sta631/activity02-slr
+  - compare: main
+4. Also verify that you have a message directly below this that says:
 
-> This branch is X commits behind gvsu-sta631:main.
-
-2.  Click on the hyperlinked “X commits behind” portion of that message
-    to be taken to a **Comparing changes** page.
-3.  Verify that your drop-down menu options specify:
-
-- base repository: username/activity02-slr
-- base: main
-- head repository: gvsu-sta631/activity02-slr
-- compare: main
-
-4.  Also verify that you have a message directly below this that says:
-
-> ✓ Able to merge. These branches can be automatically merged.
-
-Flag me if you see something different. 5. Click on the green **Create
-pull request** button under this previous message. Note you can look at
-the changes that I made, if you so desire, by scrolling down. However,
-this is not necessary. 6. On the next page, provide a short descriptive
-message in the “Title” box (e.g., “Adding Day 2 materials”). You can
-also provide a more detailed message in the “Leave a comment” box if you
-choose. 7. Click on the green **Create pull request** button. 8. On the
-next screen which is titled the same thing as what you provided in the
-“Title” box on the previous screen, you will be presented with a bunch
-of information. If you scroll down a little, you should see a green
-check mark with a message that specifies:
-
-> This branch has no conflicts with the base branch
-
-And you can click on the green **Merge pull request**. 9. You will be
-provided with with an opportunity to provide another meaningful message
-(or accept the default message). Finally, click on the green **Confirm
-merge** button. You can now work directly from your
-`username/activity02-slr` repo.
-
+  > &check; Able to merge. These branches can be automatically merged.
+  
+  Flag me if you see something different.
+5. Click on the green **Create pull request** button under this previous message.
+  Note you can look at the changes that I made, if you so desire, by scrolling down.
+  However, this is not necessary.
+6. On the next page, provide a short descriptive message in the "Title" box (e.g., "Adding Day 2 materials").
+  You can also provide a more detailed message in the "Leave a comment" box if you choose.
+7. Click on the green **Create pull request** button.
+8. On the next screen which is titled the same thing as what you provided in the "Title" box on the previous screen, you will be presented with a bunch of information.
+  If you scroll down a little, you should see a green check mark with a message that specifies:
+  
+  > This branch has no conflicts with the base branch
+  
+  And you can click on the green **Merge pull request**.
+9. You will be provided with with an opportunity to provide another meaningful message (or accept the default message).
+  Finally, click on the green **Confirm merge** button.
+  You can now work directly from your `username/activity02-slr` repo.
+  
 In summary, what you just did is pulled my changes into your repository.
-Git and GitHub refer to this as a “pull request” because you are asking
-to pull items into your repo.
+Git and GitHub refer to this as a "pull request" because you are asking to pull items into your repo.
 
 ## Task 4: Updating your forked GitHub repo
 
-In your `username/activity02-slr` repo, go into the `day02-assessing`
-subfolder and follow the tasks listed in the `README`. You will continue
-to work in your `activity02-day01.Rmd` file that you started during Day
-1 of this activity.
-
-## Attribution
-
-This document is based on labs from
-[OpenIntro](https://www.openintro.org/).
-
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"
-style="border-width:0" alt="Creative Commons License" /></a><br />This
-work is licensed under a
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
-Commons Attribution-ShareAlike 4.0 International License</a>.
+In your `username/activity02-slr` repo, go into the `day02-assessing` subfolder and follow the tasks listed in the `README`.
+You will continue to work in your `activity02-day01.Rmd` file that you started during Day 1 of this activity.
+-->
