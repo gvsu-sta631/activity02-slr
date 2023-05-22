@@ -1,8 +1,8 @@
 ---
-title: "Activity 2 - Day 1"
+title: "Activity 2"
 output: github_document
 ---
 
-```{setup, include=FALSE}
+```{r global-options, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
