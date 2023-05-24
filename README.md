@@ -182,49 +182,60 @@ second class meeting of this week.
 
 This section will be updated by our next class session.
 
-<!--
 ## Task 3: Updating your forked GitHub repo
 
-You will need to start reading these directions back at my `gvsu-sta631/activity02-slr` GitHub repo **and** have your forked `username/activity02-slr` GitHub repo handy.
-I recommend that you have my repo opened on one half of your screen and your repo opened on the other half.
-Read these directions first, then work through them.
+You will need to start reading these directions back at my
+`gvsu-sta631/activity02-slr` GitHub repo **and** have your forked
+`username/activity02-slr` GitHub repo handy. I recommend that you have
+my repo opened on one half of your screen and your repo opened on the
+other half. Read these directions first, then work through them.
 
-1. At the top of your `username/activity02-slr` repo (above the repo contents section), verify that you see a message that looks something like:
-  
-  > This branch is X commits behind gvsu-sta631:main.
-  
-2. Click on the hyperlinked "X commits behind" portion of that message to be taken to a **Comparing changes** page.
-3. Verify that your drop-down menu options specify:
-  - base repository: username/activity02-slr
-  - base: main
-  - head repository: gvsu-sta631/activity02-slr
-  - compare: main
-4. Also verify that you have a message directly below this that says:
+1.  At the top of your `username/activity02-slr` repo (above the repo
+    contents section), verify that you see a message that looks
+    something like:
 
-  > &check; Able to merge. These branches can be automatically merged.
-  
-  Flag me if you see something different.
-5. Click on the green **Create pull request** button under this previous message.
-  Note you can look at the changes that I made, if you so desire, by scrolling down.
-  However, this is not necessary.
-6. On the next page, provide a short descriptive message in the "Title" box (e.g., "Adding Day 2 materials").
-  You can also provide a more detailed message in the "Leave a comment" box if you choose.
-7. Click on the green **Create pull request** button.
-8. On the next screen which is titled the same thing as what you provided in the "Title" box on the previous screen, you will be presented with a bunch of information.
-  If you scroll down a little, you should see a green check mark with a message that specifies:
-  
-  > This branch has no conflicts with the base branch
-  
-  And you can click on the green **Merge pull request**.
-9. You will be provided with with an opportunity to provide another meaningful message (or accept the default message).
-  Finally, click on the green **Confirm merge** button.
-  You can now work directly from your `username/activity02-slr` repo.
-  
+> This branch is X commits behind gvsu-sta631:main.
+
+2.  Click on the hyperlinked “X commits behind” portion of that message
+    to be taken to a **Comparing changes** page.
+3.  Verify that your drop-down menu options specify:
+
+- base repository: username/activity02-slr
+- base: main
+- head repository: gvsu-sta631/activity02-slr
+- compare: main
+
+4.  Also verify that you have a message directly below this that says:
+
+> ✓ Able to merge. These branches can be automatically merged.
+
+Flag me if you see something different. 5. Click on the green **Create
+pull request** button under this previous message. Note you can look at
+the changes that I made, if you so desire, by scrolling down. However,
+this is not necessary. 6. On the next page, provide a short descriptive
+message in the “Title” box (e.g., “Adding Day 2 materials”). You can
+also provide a more detailed message in the “Leave a comment” box if you
+choose. 7. Click on the green **Create pull request** button. 8. On the
+next screen which is titled the same thing as what you provided in the
+“Title” box on the previous screen, you will be presented with a bunch
+of information. If you scroll down a little, you should see a green
+check mark with a message that specifies:
+
+> This branch has no conflicts with the base branch
+
+And you can click on the green **Merge pull request**. 9. You will be
+provided with with an opportunity to provide another meaningful message
+(or accept the default message). Finally, click on the green **Confirm
+merge** button. You can now work directly from your
+`username/activity02-slr` repo.
+
 In summary, what you just did is pulled my changes into your repository.
-Git and GitHub refer to this as a "pull request" because you are asking to pull items into your repo.
+Git and GitHub refer to this as a “pull request” because you are asking
+to pull items into your repo.
 
 ## Task 4: Updating your forked GitHub repo
 
-In your `username/activity02-slr` repo, go into the `day02-assessing` subfolder and follow the tasks listed in the `README`.
-You will continue to work in your `activity02-day01.Rmd` file that you started during Day 1 of this activity.
--->
+In your `username/activity02-slr` repo, go into the `day02-assessing`
+subfolder and follow the tasks listed in the `README`. You will continue
+to work in your `activity02.Rmd` file that you started during Day 1 of
+this activity.
