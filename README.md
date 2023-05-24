@@ -66,7 +66,9 @@ Day 2:
 2.  (Week 3 Tasks, second “Do” bullet item) Found a dataset that is of a
     topic you find interesting and have access to.
 
-### Task 1: Forking the Repository
+### Task 1: Forking & cloning
+
+#### Forking
 
 Read these directions first, then work through them. In this GitHub repo
 (i.e., my repo):
@@ -97,28 +99,67 @@ you will see the following message:
 You will complete the rest of this activity in **your** forked copy of
 the `activity02-slr` repo.
 
-**Note for Bradford, you need to add the clone to RStudio information
-here!**
+#### Cloning
+
+You connected RStudio and GitHub for Day 2 of this activity. If you are
+experiencing issues, get a hold of me or verify that you successfully
+set up RStudio and GitHub to communicate by redoing [this previously
+assigned preparation](https://github.com/gvsu-sta518/preparation02).
+
+Read these directions first, then work through them during your second
+reading. Note that you will be switching between RStudio and your GitHub
+repo (that you previously forked) so it might be helpful to have this
+page open on half of your screen and RStudio open on the other half.
+
+1.  In RStudio, click on the
+    <img src="README-img/rproj-icon.png" alt="RStudio Project" width = "20"/>
+    icon (the icon below the Edit drop-down menu).
+2.  Click on **Version Control** on the *New Project Wizard* pop-up.
+3.  Click on **Git** and you should be on a “Clone Git Repository” page.
+4.  Back to **your** `activity06-logistic-regression` GitHub repo, click
+    on the green **Code** button near the top of the page.
+5.  Verify that **HTTPS** is underlined in orange/red on the drop-down
+    menu, then copy the URL provided.
+6.  Back in RStudio, paste the URL in the “Repository URL” text field.
+7.  The “Project directory name” text field should have automatically
+    populated with `activity02-slr`. If yours did not (this is usually
+    an issue on Macs),
+    - Click back into the “Repository URL” text field.
+    - Highlight any bit of this text (it does not seem to matter what or
+      how much).
+    - Press Ctrl/Cmd and the “Project directory name” should now have
+      automatically populated with `activity02-slr`.
+8.  Browse to `STA 631/Activities` (assuming you followed my opinionated
+    file structure from earlier in the semester), then click **Choose**.
+9.  Click on **Create Project**.
+
+Your screen should refresh and the **Files** pane should say that you
+are currently in your `activity02-slr` folder that currently has the
+same files and folders as your GitHub repo. If you are asked for your
+GitHub credentials, provide your GitHub username and your PAT (not your
+password).
 
 ![check-in](README-img/noun-magnifying-glass.png) **Check in**
 
 Take a moment to reflect on what is possibly your second time doing this
 forking process.
 
-- What was easier this time?
-- What is still muddy?
-- What do you need to try/do/explore to help with this muddiness?
+- How is this process going for you? Is it “muscle memory” yet?
+- What is easier since last week?
+- What do you still need help remembering?
 
 ## Task 2: One quantitative response variable and one quantitative explanatory variable
 
-The Human Freedom Index is a report that attempts to summarize the idea
-of “freedom” through a bunch of different variables for many countries
-around the globe. It serves as a rough objective measure for the
-relationships between the different types of freedom - whether it is
-political, religious, economical or personal freedom - and other social
-and economic circumstances. The Human Freedom Index is an annually
-co-published report by the Cato Institute, the Fraser Institute, and the
-Liberales Institut at the Friedrich Naumann Foundation for Freedom.
+You have data that you found interesting and are bringing it with you
+for this activity. This data might be in a format that is not
+necessarily ready to be analyzed. Therefore, Day 1 of this activity is
+lighter than Day 2 to provide you with time and space to do any needed
+data management. Day 1 is essentially doing a process similar to what
+you did in [Activity 1, Day
+3](https://github.com/gvsu-sta631/activity01-course-tools/tree/main/day03-rstudio-r).
+I encourage you to do all data management work in R so that it is
+documented (and hopefully commented) and thus, [reproducible and/or
+replicable](https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html).
 
 Read these directions first, then work through them.
 
