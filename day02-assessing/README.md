@@ -23,10 +23,11 @@ your RStudio files. Read these directions first, then work through them.
 Since you are likely looking at the `README` (this page) on GitHub,
 nothing of importance for your work today was brought in. However, it is
 always a good habit to **pull** from GitHub before starting to work
-after taking a break. For example, if you were collaborating on a
+after taking a break.. For example, if you were collaborating on a
 project with others, they might do work at different times than you (or
-even at the same time). It is always good to solve problems on your end
-before **push**ing to GitHub and causing more problems.
+even at the same time). It is always best practice to solve problems on
+your end (in your version) before **push**ing to GitHub as this will
+likely cause many problems.
 
 ## Train-test splits
 
@@ -83,13 +84,13 @@ sample of 5 values (again from a standard normal distribution).
 rnorm(5, mean = 0, sd = 1)
 ```
 
-    ## [1] -2.08190178  0.03169535  0.30296139  0.62555065 -0.46465036
+    ## [1] -2.3206601 -0.7906647 -0.7334814  0.3478228 -0.3156927
 
 ``` r
 rnorm(5, mean = 0, sd = 1)
 ```
 
-    ## [1] -0.37943400  0.09894424  1.30425850  0.21574878 -0.59060727
+    ## [1] -1.7066483 -1.6709003 -0.4751651  0.4089931 -0.3746774
 
 Notice that the results differ. Now I set a seed using the appropriately
 named function `set.seed`. For simplicity, you provide this function
@@ -128,18 +129,18 @@ The same two individual random samples! What if we set the seed each
 time we generate a random sample?
 
 ``` r
-set.seed(2023)
+set.seed(2024)
 rnorm(5, mean = 0, sd = 1)
 ```
 
-    ## [1] -0.08378436 -0.98294375 -1.87506732 -0.18614466 -0.63348570
+    ## [1]  0.9819694  0.4687150 -0.1079713 -0.2128782  1.1580985
 
 ``` r
-set.seed(2023)
+set.seed(2024)
 rnorm(5, mean = 0, sd = 1)
 ```
 
-    ## [1] -0.08378436 -0.98294375 -1.87506732 -0.18614466 -0.63348570
+    ## [1]  0.9819694  0.4687150 -0.1079713 -0.2128782  1.1580985
 
 Yay! The same exact *random* samples. So how can we use this to create
 our train-test splits? There are many ways, though we will stick to our
@@ -147,6 +148,41 @@ our train-test splits? There are many ways, though we will stick to our
 
 ``` r
 library(tidymodels)
+```
+
+    ## Warning: package 'tidymodels' was built under R version 4.2.3
+
+    ## Warning: package 'broom' was built under R version 4.2.3
+
+    ## Warning: package 'dials' was built under R version 4.2.3
+
+    ## Warning: package 'scales' was built under R version 4.2.3
+
+    ## Warning: package 'dplyr' was built under R version 4.2.3
+
+    ## Warning: package 'ggplot2' was built under R version 4.2.3
+
+    ## Warning: package 'infer' was built under R version 4.2.3
+
+    ## Warning: package 'modeldata' was built under R version 4.2.3
+
+    ## Warning: package 'parsnip' was built under R version 4.2.3
+
+    ## Warning: package 'purrr' was built under R version 4.2.3
+
+    ## Warning: package 'recipes' was built under R version 4.2.3
+
+    ## Warning: package 'rsample' was built under R version 4.2.3
+
+    ## Warning: package 'tibble' was built under R version 4.2.3
+
+    ## Warning: package 'tune' was built under R version 4.2.3
+
+    ## Warning: package 'workflowsets' was built under R version 4.2.3
+
+    ## Warning: package 'yardstick' was built under R version 4.2.3
+
+``` r
 # diamonds dataset from {ggplot2} (loaded with {tidymodels})
 diamonds
 ```
@@ -164,7 +200,7 @@ diamonds
     ##  8  0.26 Very Good H     SI1      61.9    55   337  4.07  4.11  2.53
     ##  9  0.22 Fair      E     VS2      65.1    61   337  3.87  3.78  2.49
     ## 10  0.23 Very Good H     VS1      59.4    61   338  4     4.05  2.39
-    ## # … with 53,930 more rows
+    ## # ℹ 53,930 more rows
 
 ``` r
 # set seed before random split
@@ -193,7 +229,7 @@ diamonds_train
     ##  8  1.05 Very Good H     VS1      63.3    57  5657  6.45  6.4   4.07
     ##  9  1    Good      F     SI1      64      57  4372  6.29  6.33  4.04
     ## 10  2.01 Good      I     SI1      63.8    57 13976  7.95  7.91  5.06
-    ## # … with 43,142 more rows
+    ## # ℹ 43,142 more rows
 
 ``` r
 diamonds_test
@@ -212,7 +248,7 @@ diamonds_test
     ##  8  0.32 Good      H     SI2      63.1    56   403  4.34  4.37  2.75
     ##  9  0.32 Good      H     SI2      63.8    56   403  4.36  4.38  2.79
     ## 10  0.3  Ideal     I     SI2      61      59   405  4.3   4.33  2.63
-    ## # … with 10,778 more rows
+    ## # ℹ 10,778 more rows
 
 Notice the dimensions of these splits (about 40k in the training set and
 10k in the testing set - for 80% of the original data in the training
@@ -224,75 +260,22 @@ that you have data collected over two years. It would then make more
 sense to treat the first year as your train dataset, then evaluate your
 model on the second year.
 
-## Task 2: Try it another way
+## Task 2: Continue in your RMarkdown activity
 
 - Open your `../day01-fitting/activity02.Rmd` file and
   <img src="../README-img/knit-icon.png" alt="knit" width = "20"/>
   **knit** it to run the work you completed during Day 1 of this
   activity.
 
-Rather than redoing everything you worked on during last class period,
-create a new section in your document (give it a descriptive header) to
-continue our work today.
-
-- Using the example code provide to you in [the previous
-  section](#Train-test-splits), split your data into training and
-  testing subsets. Remember to create a new R code chunk and provide a
-  descriptive title.
-- Using only your *training* data, replicate your work from Day 1 (i.e.,
-  explore, fit, and describe). Remember to create new R code chunks with
-  descriptive titles AND provide some narrative to explain your results.
-  My encouragement is to discuss why you are doing things, not what you
-  did (your code will show what you did).
-
-## Task 3: Assess with your training data
-
-Back in [Activity 1, Day
-3](https://github.com/gvsu-sta631/activity01-course-tools/tree/main/day03-rstudio-r),
-you worked through a complete(ish) SLR analysis in your
-`activity01-day03-slr.Rmd` file.
-
-- Still using your *training* data, assess how well your model fits
-  these data. You can refer to the these two sections from your
-  `activity01-day03-slr.Rmd` file: **4. Assess our model** and **Model
-  diagnostics** Remember to create new R code chunks with descriptive
-  titles AND provide some narrative to explain your results.
-
-## Task 4: Assess with your testing data
-
-You just fit a model and evaluated it using the exact same data. This is
-a bit of circular reasoning and does not provide much information about
-the model’s performance. Luckily, you still have your *untouched*
-testing data!
-
-- In a new R code chunk (with descriptive title), add the following
-  code. Note that you might need to change `slr_fit` to whatever you
-  assigned your model output to and `data_test` to whatever you assigned
-  your testing data to.
-
-``` r
-slr_aug <- augment(slr_fit, new_data = data_test)
-slr_aug
-```
-
-This takes your SLR model and applies it to your testing data. The
-`.fitted` column in this output is the same as doing the following
-(remember the `predict` function from Activity 1, Day 3?):
-
-``` r
-predict(slr_fit, new_data = data_test)
-```
-
-Now, using Sections **5. Predict** and **Model diagnostics** from your
-`activity01-day03-slr.Rmd` file as an example, assess how well your
-model fits your testing data. Compare your results here to your results
-from Day 1 of this activity. Did this model perform any differently?
+- The Day 2 section has you run through a similar process as Day 1, but
+  now using this train/test process. It also has you assess your model
+  using this train/test process.
 
 ## What is next?
 
 We will explore how to fit multiple linear regression (MLR) models with
-only quantitative explanatory variables. The next week we will explore
-MLR models with qualitative explanatory variables, interactions between
-variables, and how to address potential problems that arise with linear
-models. Then, the following week will be the first **Mini-competition**
-(with prize opportunities!).
+only quantitative explanatory variables. The next week (Week 5) we will
+explore MLR models with qualitative explanatory variables, interactions
+between variables, and how to address potential problems that arise with
+linear models. Then, the following week (Week 6) will be the first
+**Mini-competition** (with prize opportunities!).

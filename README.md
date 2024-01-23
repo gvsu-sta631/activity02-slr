@@ -6,10 +6,8 @@ preparation work and class meetings. On our Blackboard course site you
 were provided with items to read, watch, and do prior to attempting this
 activity. Do not proceed in this activity until you have minimally:
 
-1.  (Day 1 portion) Read ISL [Sections 3.0 (the chapter introduction) &
-    3.1.1](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf).
-2.  (Day 2 portion) Read ISL [Sections 3.1.2 &
-    3.1.3](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf).
+1.  (Day 1 portion) Read *ISLR* Chapter 1 & Sections 2.1 - 2.2
+2.  (Day 2 portion) Read *ISLR* Sections 3.0 & 3.1.
 
 In this repository/directory, you should see five items:
 
@@ -27,13 +25,12 @@ In this repository/directory, you should see five items:
 We will explore most of these items over this week. Before doing that,
 you will first make your own copy of this repository.
 
-![check-in](README-img/noun-magnifying-glass.png) **Check in**
+### Optional Resources
 
 Do you want an interactive way to check your understanding outside of
 class? Though not a perfect fit for our class,
 [OpenIntro](https://www.openintro.org/team/) is a team of passionate
-educators focused on increasing access to education (in particular
-introductory statistics and mathematics). [Benjamin
+stat educators focused on increasing peoples data skills. [Benjamin
 Baumer](https://beanumber.github.io/www/) (associate professor at Smith
 College), in collaboration with the OpenIntro team and others, created a
 series of interactive tutorials using `{learnr}` that follow the
@@ -59,19 +56,60 @@ Day 2:
 
 ## Day 1
 
-**Do not proceed in this document until you have minimally:**
-
-1.  (Week 2 Tasks, third “Do” bullet item) Created an outline of your
-    current understanding of how to approach an SLR analysis.
-2.  (Week 3 Tasks, second “Do” bullet item) Found a dataset that is of a
-    topic you find interesting and have access to.
-
 ### Task 1: Forking & cloning
+
+I forgot to include this information at the end of last week’s activity.
+I like to sketch/diagram processes to help me make my thoughts physical
+(or digital in this case) and it provides me with an opportunity to
+check my understanding. Over the last week, we began to practice the
+“Bradford STA 631 GitHub + RStudio” workflow - long name and likely
+unique to our current class needs. When you are working outside of STA
+631, your workflow with GitHub and RStudio will likely be different than
+what we do here.
+
+<figure>
+<img src="README-img/updated-workflow.svg"
+alt="Blackboard icon to fork icon to clone icon to edit icon to commit icon to push icon" />
+<figcaption aria-hidden="true">Blackboard icon to fork icon to clone
+icon to edit icon to commit icon to push icon</figcaption>
+</figure>
+
+Or in words:
+
+1.  I will post a link to an activity repo on Blackboard,
+2.  You will make your own copy of (fork) this repo,
+3.  You will create an RStudio Project and Clone this repo,
+4.  You will edit and work on the activity,
+5.  You will commit your changes, and
+6.  You will push your changes back to GitHub.
+
+![check-in](README-img/noun-magnifying-glass.png) **Check in**
+
+I encourage you to find a way to visualize or list out processes to help
+you determine if anything is missing. These do not need to be perfect
+and might include a lot of “it depends” scenarios. You can always
+include this (if it is a frequently occurring “it depends”) or make note
+of them in some other way.
+
+For your preparation tasks, you were asked to create an outline of your
+current understanding of how to approach a simple linear regression
+analysis. With your neighbors for the next 5 minutes, talk through your
+processes.
+
+As a class we will discuss these items:
+
+- What similarities did you notice?
+- Did someone have a consideration/step in their process that you had
+  heard of before, but forgot to include in yours?
+- What changes, currently, do you plan to make to your process?
 
 #### Forking
 
-Read these directions first, then work through them. In this GitHub repo
-(i.e., my repo):
+Now you will go through our GitHub + RStudio process. Read these
+directions first, then work through them as this is likely still new to
+you. Ask questions of your neighbors and Bradford as you have them.
+
+In this GitHub repo (i.e., my repo):
 
 1.  Click on the ![fork](README-img/fork-icon.png) **Fork** icon near
     the upper-right-hand corner. You will be taken to a **Create a new
@@ -148,7 +186,7 @@ forking process.
 - What is easier since last week?
 - What do you still need help remembering?
 
-## Task 2: One quantitative response variable and one quantitative explanatory variable
+### Task 2: One quantitative response variable and one quantitative explanatory variable
 
 You have data that you found interesting and are bringing it with you
 for this activity. This data might be in a format that is not
@@ -179,61 +217,6 @@ The rest of this `README` document contains tasks/directions for the
 second class meeting of this week.
 
 ## Day 2
-
-This section will be updated by our next class session.
-
-## Task 3: Updating your forked GitHub repo
-
-You will need to start reading these directions back at my
-`gvsu-sta631/activity02-slr` GitHub repo **and** have your forked
-`username/activity02-slr` GitHub repo handy. I recommend that you have
-my repo opened on one half of your screen and your repo opened on the
-other half. Read these directions first, then work through them.
-
-1.  At the top of your `username/activity02-slr` repo (above the repo
-    contents section), verify that you see a message that looks
-    something like:
-
-> This branch is X commits behind gvsu-sta631:main.
-
-2.  Click on the hyperlinked “X commits behind” portion of that message
-    to be taken to a **Comparing changes** page.
-3.  Verify that your drop-down menu options specify:
-
-- base repository: username/activity02-slr
-- base: main
-- head repository: gvsu-sta631/activity02-slr
-- compare: main
-
-4.  Also verify that you have a message directly below this that says:
-
-> ✓ Able to merge. These branches can be automatically merged.
-
-Flag me if you see something different. 5. Click on the green **Create
-pull request** button under this previous message. Note you can look at
-the changes that I made, if you so desire, by scrolling down. However,
-this is not necessary. 6. On the next page, provide a short descriptive
-message in the “Title” box (e.g., “Adding Day 2 materials”). You can
-also provide a more detailed message in the “Leave a comment” box if you
-choose. 7. Click on the green **Create pull request** button. 8. On the
-next screen which is titled the same thing as what you provided in the
-“Title” box on the previous screen, you will be presented with a bunch
-of information. If you scroll down a little, you should see a green
-check mark with a message that specifies:
-
-> This branch has no conflicts with the base branch
-
-And you can click on the green **Merge pull request**. 9. You will be
-provided with with an opportunity to provide another meaningful message
-(or accept the default message). Finally, click on the green **Confirm
-merge** button. You can now work directly from your
-`username/activity02-slr` repo.
-
-In summary, what you just did is pulled my changes into your repository.
-Git and GitHub refer to this as a “pull request” because you are asking
-to pull items into your repo.
-
-## Task 4: Updating your forked GitHub repo
 
 In your `username/activity02-slr` repo, go into the `day02-assessing`
 subfolder and follow the tasks listed in the `README`. You will continue
