@@ -205,7 +205,7 @@ Read these directions first, then work through them.
     into the `day01-fitting` subfolder.
 2.  In the `day01-fitting` subfolder, you will be greeted by a new
     `README.md` file. Do your best to complete the tasks/directions
-    provide in this subfolder by **11:59 pm (EST) on Tue, Jan 24**.
+    provide in this subfolder by our next class session.
 3.  In our Teams workspace (linked on Blackboard), find the **Muddy**
     channel and post what was muddiest from these tasks. If someone else
     already posted what you though was muddy, add any clarification to

@@ -29,7 +29,7 @@ even at the same time). It is always best practice to solve problems on
 your end (in your version) before **push**ing to GitHub as this will
 likely cause many problems.
 
-## Train-test splits
+## Task 2: Read about train-test splits
 
 In Day 1, you used your entire dataset to fit an SLR model. However,
 when we wish to evaluate how good a model is, using the same data does
@@ -84,13 +84,13 @@ sample of 5 values (again from a standard normal distribution).
 rnorm(5, mean = 0, sd = 1)
 ```
 
-    ## [1] -2.3206601 -0.7906647 -0.7334814  0.3478228 -0.3156927
+    ## [1]  0.06234993 -1.08809994 -0.52489843 -1.10680040  0.03077324
 
 ``` r
 rnorm(5, mean = 0, sd = 1)
 ```
 
-    ## [1] -1.7066483 -1.6709003 -0.4751651  0.4089931 -0.3746774
+    ## [1]  1.7524407 -0.1279669  0.2840223 -1.6425806 -0.4148391
 
 Notice that the results differ. Now I set a seed using the appropriately
 named function `set.seed`. For simplicity, you provide this function
@@ -148,41 +148,6 @@ our train-test splits? There are many ways, though we will stick to our
 
 ``` r
 library(tidymodels)
-```
-
-    ## Warning: package 'tidymodels' was built under R version 4.2.3
-
-    ## Warning: package 'broom' was built under R version 4.2.3
-
-    ## Warning: package 'dials' was built under R version 4.2.3
-
-    ## Warning: package 'scales' was built under R version 4.2.3
-
-    ## Warning: package 'dplyr' was built under R version 4.2.3
-
-    ## Warning: package 'ggplot2' was built under R version 4.2.3
-
-    ## Warning: package 'infer' was built under R version 4.2.3
-
-    ## Warning: package 'modeldata' was built under R version 4.2.3
-
-    ## Warning: package 'parsnip' was built under R version 4.2.3
-
-    ## Warning: package 'purrr' was built under R version 4.2.3
-
-    ## Warning: package 'recipes' was built under R version 4.2.3
-
-    ## Warning: package 'rsample' was built under R version 4.2.3
-
-    ## Warning: package 'tibble' was built under R version 4.2.3
-
-    ## Warning: package 'tune' was built under R version 4.2.3
-
-    ## Warning: package 'workflowsets' was built under R version 4.2.3
-
-    ## Warning: package 'yardstick' was built under R version 4.2.3
-
-``` r
 # diamonds dataset from {ggplot2} (loaded with {tidymodels})
 diamonds
 ```
@@ -260,7 +225,7 @@ that you have data collected over two years. It would then make more
 sense to treat the first year as your train dataset, then evaluate your
 model on the second year.
 
-## Task 2: Continue in your RMarkdown activity
+## Task 3: Continue in your RMarkdown activity
 
 - Open your `../day01-fitting/activity02.Rmd` file and
   <img src="../README-img/knit-icon.png" alt="knit" width = "20"/>
@@ -277,5 +242,4 @@ We will explore how to fit multiple linear regression (MLR) models with
 only quantitative explanatory variables. The next week (Week 5) we will
 explore MLR models with qualitative explanatory variables, interactions
 between variables, and how to address potential problems that arise with
-linear models. Then, the following week (Week 6) will be the first
-**Mini-competition** (with prize opportunities!).
+linear models.

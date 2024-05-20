@@ -33,18 +33,13 @@ If you would like to try the *ISLR* labs using these two packages instead of bas
   install.packages("package_name")
   ```
   
-- Once you have verified that both `{tidyverse}` and `{tidymodels}` are installed, load these packages in the R chunk below titled `setup`.
-  That is, type the following:
-  
-  ```{r library-example, eval = FALSE}
-  library(tidyverse)
-  library(tidymodels)
-  ```
-  
+- Once you have verified that both `{tidyverse}` and `{tidymodels}` are installed, load these packages in the R chunk below titled `setup` by removing the "`, eval = FALSE`" portion in the code chunk options.
+
 - Run the `setup` code chunk and/or **knit** <img src="../README-img/knit-icon.png" alt="knit" width = "20"/> icon your Rmd document to verify that no errors occur.
 
-```{r setup}
-
+```{r setup, eval = FALSE}
+library(tidyverse)
+library(tidymodels)
 ```
 
 ![check-in](../README-img/noun-magnifying-glass.png) **Check in**
@@ -159,7 +154,7 @@ Remember that you can type `?function_name` in the R **Console** to explore a fu
 The above code also outputs the `lm_spec` output.
 This code does not do any calculations by itself, but rather specifies what we plan to do.
 
-Using this specification, we can now fit our model: $\texttt{pf\score} = \beta_0 + \beta_1 \times \texttt{pf\_expression\_control} + \varepsilon$.
+Using this specification, we can now fit our model: $\texttt{pf\\_score} = \beta_0 + \beta_1 \times \texttt{pf\\_expression\\_control} + \varepsilon$.
 Note, the "$" portion in the previous sentence is LaTeX snytex which is a math scripting (and other scripting) language.
 I do not expect you to know this, but you will become more comfortable with this.
 Look at your knitted document to see how this syntax appears.
@@ -178,7 +173,7 @@ The above code fits our SLR model, then provides a `tidy` parameter estimates ta
 5. Using the `tidy` output, update the below formula with the estimated parameters.
   That is, replace "intercept" and "slope" with the appropriate values
 
-$\hat{\texttt{pf\score}} = intercept + slope \times \texttt{pf\_expression\_control}$
+$\widehat{\texttt{pf\\_score}} = intercept + slope \times \texttt{pf\\_expression\\_control}$
 
 
 6. Interpret each of the estimated parameters from (5) in the context of this research question.
@@ -246,7 +241,7 @@ Notice that you can reuse the `lm_spec` specification because we are still doing
 9. Using the `tidy` output, update the below formula with the estimated parameters.
   That is, replace "intercept" and "slope" with the appropriate values
 
-$\hat{\texttt{pf\score}} = intercept + slope \times \texttt{pf\_expression\_control}$
+$\widehat{\texttt{pf\\_score}} = intercept + slope \times \texttt{pf\\_expression\\_control}$
 
 
 10. Interpret each of the estimated parameters from (10) in the context of this research question.
@@ -270,7 +265,7 @@ This takes your SLR model and applies it to your testing data.
 Look at the various information produced by this code.
 Can you identify what each column represents?
 
-The `.fitted` column in this output can also be obtained by using `predict` (i.e., `predict(slr_fit, new_data = data_test)`)
+The `.pred` column in this output can also be obtained by using `predict` (i.e., `predict(slr_fit, new_data = data_test)`)
 
 11. Now, using your responses to (7) and (8) as an example, assess how well your model fits your testing data.
   Compare your results here to your results from your Day 1 of this activity.
@@ -286,11 +281,10 @@ Note that the normal residuals is not really necessary for all models (sometimes
 In order to do these checks we need access to the fitted (predicted) values and the residuals.
 We can use `broom::augment` to calculate these.
 
-- In the code chunk below titled `augment`, replace "verbatim" with "r" just before the code chunk title and update `data_test` to whatever R object you assigned your testing data to above. 
+- In the code chunk below titled `augment`, replace "verbatim" with "r" just before the code chunk title and update `data_train` to whatever R object you assigned your training data to above. 
   
 ```{verbatim augment}
-train_aug <- augment(slr_train)
-
+train_aug <- augment(slr_train, new_data = data_train)
 train_aug
 ```
 
@@ -301,7 +295,7 @@ We should also verify this condition with a plot of the residuals vs. fitted (pr
 - In the code chunk below titled `fitted-residual`, replace "verbatim" with "r" just before the code chunk title. 
   
 ```{verbatim fitted-residual}
-ggplot(data = train_aug, aes(x = .fitted, y = .resid)) +
+ggplot(data = train_aug, aes(x = .pred, y = .resid)) +
   geom_point() +
   geom_hline(yintercept = 0, linetype = "dashed", color = "red") +
   xlab("Fitted values") +
