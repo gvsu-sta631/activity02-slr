@@ -188,17 +188,6 @@ forking process.
 
 ### Task 2: One quantitative response variable and one quantitative explanatory variable
 
-You have data that you found interesting and are bringing it with you
-for this activity. This data might be in a format that is not
-necessarily ready to be analyzed. Therefore, Day 1 of this activity is
-lighter than Day 2 to provide you with time and space to do any needed
-data management. Day 1 is essentially doing a process similar to what
-you did in [Activity 1, Day
-3](https://github.com/gvsu-sta631/activity01-course-tools/tree/main/day03-rstudio-r).
-I encourage you to do all data management work in R so that it is
-documented (and hopefully commented) and thus, [reproducible and/or
-replicable](https://the-turing-way.netlify.app/reproducible-research/overview/overview-definitions.html).
-
 Read these directions first, then work through them.
 
 1.  In your `activity02-slr` repo folder/directory, locate and click
@@ -206,12 +195,12 @@ Read these directions first, then work through them.
 2.  In the `day01-fitting` subfolder, you will be greeted by a new
     `README.md` file. Do your best to complete the tasks/directions
     provide in this subfolder by our next class session.
-3.  In our Teams workspace (linked on Blackboard), find the **Muddy**
-    channel and post what was muddiest from these tasks. If someone else
-    already posted what you though was muddy, add any clarification to
-    their post and give them a “+ 1” 👍. Remember that this space is for
-    conversations as well as posting questions. Read through your peers’
-    muddy posts and do your best to provide help.
+3.  If working on this activity outside of our class meetings, remember
+    that you can post your questions in the Teams **Muddy** channel. If
+    someone else already posted what you though was muddy, add any
+    clarification to their post and give them a “+ 1” 👍. Remember that
+    this space is for conversations as well as posting questions. Read
+    through your peers’ muddy posts and do your best to provide help.
 
 The rest of this `README` document contains tasks/directions for the
 second class meeting of this week.
