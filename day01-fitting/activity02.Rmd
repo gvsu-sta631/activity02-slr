@@ -45,7 +45,9 @@ Test your GitHub skills by staging, committing, and pushing your changes to GitH
 
 ### The data
 
-The data we're working with is from the OpenIntro site: `https://www.openintro.org/data/csv/hfi.csv`. Here is the "about" page: <https://www.openintro.org/data/index.php?data=hfi>. I have downloaded this file and it is available to you in your Day 1 directory (`activity02-slr/day01-fitting`).
+The data we're working with is from the OpenIntro site: `https://www.openintro.org/data/csv/hfi.csv`.
+Here is the "about" page: <https://www.openintro.org/data/index.php?data=hfi>.
+I have downloaded this file and it is available to you in your Day 1 directory (`activity02-slr/day01-fitting`).
 
 In the R code chunk below titled `load-data`, you will type the code that reads in the above linked CSV file by doing the following:
 
